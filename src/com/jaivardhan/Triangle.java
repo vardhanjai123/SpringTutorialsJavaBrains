@@ -5,9 +5,15 @@ public class Triangle {
     private String type;
     private int height;
 
-    public Triangle(String type,int height) {
+    public Triangle(int height,String type) {
         this.type = type;
         this.height=height;
+    }
+
+    public Triangle(int height)
+    {
+        System.out.println("Inside Triangle constructor");
+        this .height=height;
     }
 
     public String getType() {
