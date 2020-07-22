@@ -7,8 +7,18 @@
 
     <bean id="triangle" class="com.jaivardhan.Triangle">
         <constructor-arg name="pointA" ref="p1"></constructor-arg>
-        <constructor-arg name="pointB" ref="p2"></constructor-arg>
-        <constructor-arg name="pointC" ref="p3"></constructor-arg>
+        <constructor-arg name="pointB">
+            <bean  class="com.jaivardhan.Point">
+                <property name="x" value="20"></property>
+                <property name="y" value="0"></property>
+            </bean>
+        </constructor-arg>
+        <constructor-arg name="pointC" >
+            <bean  class="com.jaivardhan.Point">
+                <property name="x" value="0"></property>
+                <property name="y" value="-20"></property>
+            </bean>
+        </constructor-arg>
     </bean>
 
     <bean id="p1" class="com.jaivardhan.Point">
@@ -16,14 +26,5 @@
         <property name="y" value="0"></property>
     </bean>
 
-    <bean id="p2" class="com.jaivardhan.Point">
-        <property name="x" value="20"></property>
-        <property name="y" value="0"></property>
-    </bean>
-
-    <bean id="p3" class="com.jaivardhan.Point">
-        <property name="x" value="0"></property>
-        <property name="y" value="-20"></property>
-    </bean>
 
 </beans>
