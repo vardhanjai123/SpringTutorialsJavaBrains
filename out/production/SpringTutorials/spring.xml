@@ -6,8 +6,24 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="triangle" class="com.jaivardhan.Triangle">
-        <constructor-arg name="height" value="20"></constructor-arg>
-        <constructor-arg  name="type" value="equilateral"></constructor-arg>
+        <constructor-arg name="pointA" ref="p1"></constructor-arg>
+        <constructor-arg name="pointB" ref="p2"></constructor-arg>
+        <constructor-arg name="pointC" ref="p3"></constructor-arg>
+    </bean>
+
+    <bean id="p1" class="com.jaivardhan.Point">
+        <property name="x" value="0"></property>
+        <property name="y" value="0"></property>
+    </bean>
+
+    <bean id="p2" class="com.jaivardhan.Point">
+        <property name="x" value="20"></property>
+        <property name="y" value="0"></property>
+    </bean>
+
+    <bean id="p3" class="com.jaivardhan.Point">
+        <property name="x" value="0"></property>
+        <property name="y" value="-20"></property>
     </bean>
 
 </beans>

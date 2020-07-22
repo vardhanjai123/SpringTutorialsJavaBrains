@@ -1,35 +1,36 @@
 package com.jaivardhan;
 
+import javax.annotation.PostConstruct;
+
 public class Triangle {
 
-    private String type;
-    private int height;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
 
-    public Triangle(int height,String type) {
-        this.type = type;
-        this.height=height;
+    public Triangle(Point pointA, Point pointB, Point pointC) {
+        this.pointA = pointA;
+        this.pointB = pointB;
+        this.pointC = pointC;
     }
 
-    public Triangle(int height)
-    {
-        System.out.println("Inside Triangle constructor");
-        this .height=height;
+    public Point getPointA() {
+        return pointA;
     }
 
-    public String getType() {
-        return type;
+    public Point getPointB() {
+        return pointB;
     }
 
-    public int getHeight() {
-        return height;
+    public Point getPointC() {
+        return pointC;
     }
-    //    public void setType(String type) {
-//        this.type = type;
-//    }
 
     public void draw()
     {
-        System.out.println("Type of Triangle is "+getType()+" and its height is "+getHeight());
+        System.out.println("Point A=("+getPointA().getX()+","+getPointA().getY()+")");
+        System.out.println("Point B=("+getPointB().getX()+","+getPointB().getY()+")");
+        System.out.println("Point C=("+getPointC().getX()+","+getPointC().getY()+")");
     }
 
 }
