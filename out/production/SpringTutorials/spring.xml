@@ -6,7 +6,8 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="triangle" class="com.jaivardhan.Triangle">
-        <property name="type" value="Equilateral"></property>
+        <constructor-arg value="Equilateral"></constructor-arg>
+        <constructor-arg value="20"></constructor-arg>
     </bean>
 
 </beans>
