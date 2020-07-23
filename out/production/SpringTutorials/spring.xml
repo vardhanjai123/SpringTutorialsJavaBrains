@@ -5,18 +5,18 @@
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="triangle" class="com.jaivardhan.Triangle" autowire="byName">
+    <bean id="triangle" class="com.jaivardhan.Triangle" >
     </bean>
 
-    <bean id="pointA" class="com.jaivardhan.Point">
+    <bean id="pointA" class="com.jaivardhan.Point" scope="prototype">
         <property name="x" value="0"></property>
         <property name="y" value="0"></property>
     </bean>
-    <bean id="pointB" class="com.jaivardhan.Point">
+    <bean id="pointB" class="com.jaivardhan.Point" scope="prototype">
         <property name="x" value="20"></property>
         <property name="y" value="0"></property>
     </bean>
-    <bean id="pointC"  class="com.jaivardhan.Point">
+    <bean id="pointC"  class="com.jaivardhan.Point" scope="prototype">
         <property name="x" value="0"></property>
         <property name="y" value="-20"></property>
     </bean>

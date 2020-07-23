@@ -1,11 +1,15 @@
 package com.jaivardhan;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware {
 
     private Point pointA;
     private Point pointB;
     private Point pointC;
-
+    private ApplicationContext applicationContext;
 
     public Point getPointA() {
         return pointA;
@@ -40,4 +44,16 @@ public class Triangle {
 
     }
 
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext=applicationContext;
+        complete();
+    }
+
+    public void complete()
+    {
+     pointA= (Point) applicationContext.getBean("pointA");
+     pointB= (Point) applicationContext.getBean("pointB");
+     pointC= (Point) applicationContext.getBean("pointC");
+    }
 }
