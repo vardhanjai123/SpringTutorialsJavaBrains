@@ -6,7 +6,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 import java.util.List;
 
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle implements InitializingBean,DisposableBean  {
 
     private List<Point> points;
 
@@ -24,15 +24,20 @@ public class Triangle implements InitializingBean, DisposableBean {
             System.out.println("Point A=("+p.getX()+","+p.getY()+")");
 
     }
-
+   public void myInit() {
+       System.out.println("Hello This is init method called from xml file");
+   }
+   public void myDestroy(){
+       System.out.println("Hello This is destroy method called from xml file");
+   }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("Hello This is Disposable Bean init() method");
+        System.out.println("Hello This is Disposable Bean destroy() method");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("Hello this is Initializing Bean destroy() method");
+        System.out.println("Hello this is Initializing Bean init() method");
     }
 }

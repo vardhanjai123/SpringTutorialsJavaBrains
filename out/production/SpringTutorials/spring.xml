@@ -14,7 +14,7 @@
     </bean>
 
 
-    <bean id="triangle1" class="com.jaivardhan.Triangle" parent="triangle">
+    <bean id="triangle1" class="com.jaivardhan.Triangle" parent="triangle" init-method="myInit" destroy-method="myDestroy">
         <property name="points">
             <list merge="true">
                 <ref bean="pointB"></ref>
