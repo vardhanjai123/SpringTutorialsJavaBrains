@@ -6,21 +6,14 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="triangle" abstract="true">
-        <property name="points" >
-            <list>
-                <ref bean="pointA"></ref>
-            </list>
+        <property name="pointA" ref="pointA">
         </property>
     </bean>
 
 
     <bean id="triangle1" class="com.jaivardhan.Triangle" parent="triangle" init-method="myInit" destroy-method="myDestroy">
-        <property name="points">
-            <list merge="true">
-                <ref bean="pointB"></ref>
-                <ref bean="pointC"></ref>
-            </list>
-        </property>
+        <property name="pointB" ref="pointB"></property>
+        <property name="pointC" ref="pointC"></property>
     </bean>
 
     <bean id="pointA" class="com.jaivardhan.Point" >
@@ -37,5 +30,5 @@
     </bean>
 
     <alias name="p1" alias="point1"></alias>
-
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
 </beans>
