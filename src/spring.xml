@@ -31,4 +31,5 @@
 
     <alias name="p1" alias="point1"></alias>
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+
 </beans>
